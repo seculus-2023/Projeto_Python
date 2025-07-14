@@ -1,0 +1,132 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding-top: 70px; /* Compensa a navbar fixa */
+    background-image: url('/static/img/site.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.navbar {
+    background-color: rgba(0, 128, 0, 0.8) !important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navbar-nav .nav-link:hover {
+    background: #f8f9fa;
+    color: #007bff !important;
+    border-radius: 10px;
+    transition: background 0.2s, color 0.2s;
+}
+
+.container {
+    margin-top: 200px;
+    min-width: 100vw;
+    height: 500px;
+    padding: 60px;
+    background-color: rgba(255, 255, 255, 0.85); /* Transparência aplicada */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px; /* Espaço para o footer */
+}
+
+
+.form-control {
+    margin-bottom: 15px;
+}
+
+.btn-primary {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+}
+
+.text-reset {
+    color: inherit;
+    text-decoration: none;
+}
+
+.text-reset:hover {
+    text-decoration: underline;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+button:hover {
+    background-color: #45a049;
+}
+.whatsapp-button {
+    position: fixed; /* Fixa o botão na tela */
+    bottom: 20px; /* Distância do fundo */
+    right: 20px; /* Distância da direita */
+    z-index: 1000; /* Garante que o botão fique acima de outros elementos */
+    background-color: #25d366; /* Cor do WhatsApp */
+    border-radius: 50%; /* Formato circular */
+    padding: 10px; /* Espaçamento interno */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+    transition: background-color 0.3s ease; /* Transição suave */
+  }
+  
+  .whatsapp-button:hover {
+    background-color: #128c7e; /* Cor do WhatsApp ao passar o mouse */
+  }
+  
+  .whatsapp-button img {
+    width: 40px; /* Tamanho do ícone */
+    height: 40px; /* Tamanho do ícone */
+  }
+
+  .row {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding-bottom: 5px;
+}
+
+/* Invisível mas funcional */
+.row::-webkit-scrollbar {
+    height: 0px;
+}
+.row {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE 10+ */
+}
+
+/* Estilo dos blocos */
+.box {
+    min-width: 350px;
+    max-width: 350px;
+    min-height: 350px;
+    max-height: 350px;
+    background: #fff;
+    border: 0px solid #007bff;
+    padding: 15px;
+    font-weight: bold;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    flex-shrink: 0;
+}
+
+h3 {
+    color: #0f3f0a;
+    font-weight: bold;
+}
+
+.box p {
+    text-align: justify;
+}
