@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.core.mail import send_mail
+from django.conf import settings
 from .models import Projeto, Contato
 
 
@@ -25,7 +26,7 @@ def contato(request):
             send_mail(
                 subject=f'Novo contato de {nome}',
                 message=f'Nome: {nome}\nE-mail: {email}\nTelefone: {telefone}\nMensagem: {mensagem}',
-                from_email=None,  # Usa o DEFAULT_FROM_EMAIL
+                from_email=settings.DEFAULT_FROM_EMAIL,
                 recipient_list=['arpjunior40@gmail.com'],
                 fail_silently=False,
             )
