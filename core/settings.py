@@ -24,7 +24,6 @@ load_dotenv(os.path.join(BASE_DIR, ".env"))
 
 TEMPLATE_DIR = os.path.join(BASE_DIR,'templates')
 
-STATIC_DIR=os.path.join(BASE_DIR,'static') 
 
 APPS_DIR = str(os.path.join(BASE_DIR,'apps')) # Dentro da pasta apps na raiz do projeto
 sys.path.insert(0, APPS_DIR)
@@ -49,7 +48,7 @@ ALLOWED_HOSTS.extend(
 
 # CORS Config
 CORS_ALLOW_HEADERS = list(default_headers) + [
-	'X-Register',
+    'X-Register',
 ] 
 
 CORS_ORIGIN_ALLOW_ALL = True  
@@ -187,16 +186,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/ 
 
-STATIC_ROOT = os.path.join(BASE_DIR,'static')
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-STATIC_URL = '/static/' 
-
-# STATICFILES_DIRS = [ # talvez em Produção podesse usar assim.
-#     BASE_DIR / 'static',
-# ]
-
-MEDIA_ROOT=os.path.join(BASE_DIR,'media')
 MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
@@ -214,11 +210,11 @@ SERVER_EMAIL = DEFAULT_FROM_EMAIL
 
 
 MESSAGE_TAGS = {
-	constants.ERROR: 'alert-danger',
-	constants.WARNING: 'alert-warning',
-	constants.DEBUG: 'alert-danger',
-	constants.SUCCESS: 'alert-success',
-	constants.INFO: 'alert-info',
+    constants.ERROR: 'alert-danger',
+    constants.WARNING: 'alert-warning',
+    constants.DEBUG: 'alert-danger',
+    constants.SUCCESS: 'alert-success',
+    constants.INFO: 'alert-info',
 }
 
 LOGGING = {
