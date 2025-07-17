@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Projeto, Certificado, Contato
+from .models import Projeto, Certificado, Contato, MembroEquipe
 
 @admin.register(Projeto)
 class ProjetoAdmin(admin.ModelAdmin):
@@ -15,3 +15,8 @@ class CertificadoAdmin(admin.ModelAdmin):
 class ContatoAdmin(admin.ModelAdmin):
     list_display = ('nome', 'email', 'criado_em')
     search_fields = ('nome', 'email')
+
+@admin.register(MembroEquipe)
+class MembroEquipeAdmin(admin.ModelAdmin):
+    list_display = ('nome', 'email', 'telefone')
+    search_fields = ('nome', 'email', 'telefone')

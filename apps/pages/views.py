@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.core.mail import send_mail
 from django.conf import settings
-from .models import Projeto, Contato
+from .models import Projeto, Contato , MembroEquipe
 
 
 # Create your views here.
@@ -42,3 +42,10 @@ def equipe(request):
 def projetos(request):
     projetos = Projeto.objects.filter(ativo=True)
     return render(request, 'projetos.html', {'projetos': projetos})
+
+def politica(request):
+    return render(request, 'politica.html')
+
+def membros(request):
+    membros = MembroEquipe.objects.all()
+    return render(request, 'membros.html', {'equipe': membros})

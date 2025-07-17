@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}Membros{% endblock %}
+{% block content %}
+    <div class="container" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
+        {% for membro in equipe %}
+            <div class="membro" style="width: 220px; min-height: 320px; background: #fff; padding: 10px; box-shadow: 0 0 5px #ccc; text-align: center; border-radius: 8px;">
+                {% if membro.foto %}
+                    <img src="{{ membro.foto.url }}" alt="Foto de {{ membro.nome }}" style="width:200px; height:200px; object-fit:cover; border-radius: 4px;">
+                {% else %}
+                    <div style="width:200px; height:200px; background:#eee; display:flex; align-items:center; justify-content:center;">
+                        <span>Sem foto</span>
+                    </div>
+                {% endif %}
+                <p style="margin: 10px 0 5px;"><strong>{{ membro.nome }}</strong></p>
+                <p style="font-size: 0.9em;">
+                    <a href="mailto:{{ membro.email }}">{{ membro.email }}</a>
+                </p>
+                <p style="font-size: 0.9em;">{{ membro.telefone }}</p>
+            </div>
+        {% empty %}
+            <div class="alert alert-info mt-4">Nenhum projeto cadastrados.</div>
+        {% endfor %}
+    </div>
+{% endblock %}
+
+
